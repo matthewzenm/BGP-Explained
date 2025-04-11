@@ -1,0 +1,138 @@
+\section{Basic Notions in Metric Geometry}
+
+We start from intrinsic metric spaces.
+The authors choose the equivalent definition of existence of $\delta$-midpoint, however, we use the more basic definition.
+
+\begin{nota}
+    Let $X$ be a metric space, the distance between $x,y\in X$ will be denoted by $|xy|$.
+\end{nota}
+
+\begin{defn}
+    Let $X$ be a metric space, $\gamma:[a,b]\to X$ be a curve.
+    We define the \emph{length} of $\gamma$ to be
+    \[L[\gamma]:=\sup\left\{\sum_{i=1}^n|x_{i-1}x_i|\colon a=x_0<x_1<\cdots<x_{n_1}<x_n=b\right\}.\]
+    If $L[\gamma]<+\infty$, we call $\gamma$ is \emph{rectifiable}.
+    Denote the set of all the (isomorphism classes under linear reparametrization of) rectifiable curves between $x,y$ by $\Omega_{xy}$.
+\end{defn}
+
+\begin{defn}
+    Let $X$ be a metric space.
+    If for any $x,y\in X$, we have
+    \[|xy|=\inf_{\gamma\in\Omega_{xy}}L[\gamma],\]
+    then we call $X$ an \emph{intrinsic metric space}.
+\end{defn}
+
+\begin{prop}\label{prop:delta midpoint}
+    Let $X$ be a complete metric space, then $X$ is intrinsic if and only if for any $x,y\in X$ and $\delta>0$, there exists $z\in X$, such that
+    \[|xz|<\frac{1}{2}|xy|+\delta,\ |yz|<\frac{1}{2}|xy|+\delta.\]
+\end{prop}
+\begin{proof}
+    The only if part is relatively easy, we only show if part.
+    Fix $\delta>0$.
+    For $x,y$, we define a curve $\gamma:[0,1]\to X$ with $L[\gamma]<|xy|+\delta$.
+    By assumption, we can choose $\gamma(1/2)$ with
+    \[\left|x\gamma\left(\frac{1}{2}\right)\right|<\frac{1}{2}|xy|+\frac{1}{2^2}\delta,\ \left|y\gamma\left(\frac{1}{2}\right)\right|<\frac{1}{2}|xy|+\frac{1}{2^2}\delta.\]
+    Then we choose
+    \begin{gather*}
+        \left|x\gamma\left(\frac{1}{4}\right)\right|<\frac{1}{2}\left|x\gamma\left(\frac{1}{2}\right)\right|+\frac{1}{4^2}\delta,\ \left|\gamma\left(\frac{1}{4}\right)\gamma\left(\frac{1}{2}\right)\right|<\frac{1}{2}\left|x\gamma\left(\frac{1}{2}\right)\right|+\frac{1}{4^2}\delta\\
+        \left|\gamma\left(\frac{3}{4}\right)\gamma\left(\frac{1}{2}\right)\right|<\frac{1}{2}\left|\gamma\left(\frac{1}{2}\right)y\right|+\frac{1}{4^2}\delta,\ \left|\gamma\left(\frac{3}{4}\right)y\right|<\frac{1}{2}\left|x\gamma\left(\frac{1}{2}\right)\right|+\frac{1}{4^2}\delta.
+    \end{gather*}
+    Define inductively to all diadic numbers, add $\gamma(0)=x,\gamma(1)=y$.
+    Notice that $\gamma$ is Lipschitz, hence $\gamma$ can be defined on whole $[0,1]$.
+    Since
+    \begin{align*}
+        \sum_{i=0}^{2^n-1}\left|\gamma\left(\frac{i}{2^n}\right)\gamma\left(\frac{i+1}{2^n}\right)\right|&<\sum_{i=0}^{2^{n-1}-1}\left(\left|\gamma\left(\frac{i}{2^{n-1}}\right)\gamma\left(\frac{i+1}{2^{n-1}}\right)\right|+\frac{1}{2^{2n-1}}\delta\right)\\
+        &<\cdots\\
+        &<|xy|+\delta,
+    \end{align*}
+    passing to limit, we obtain $L[\gamma]<|xy|+\delta$.
+\end{proof}
+
+\begin{defn}
+    A \emph{geodesic} is a curve whose length is equal to the distance between its ends.
+    An intrinsic metric space is called \emph{geodesic} if any two points can be joined with a geodesic.
+\end{defn}
+
+\begin{nota}
+    We use $[xy]$ to denote a geodesic between $x$ and $y$.
+    There may be several geodesics between $x$ and $y$, and if we use this notation, we mean we specified a particular geodesic.
+\end{nota}
+
+\begin{prop}\label{prop:midpoint}
+    Let $X$ be a complete metric space, then $X$ is geodesic if and only if for any $x,y\in X$, there exists $z\in X$, such that
+    \[|xz|=|yz|=\frac{1}{2}|xy|.\]
+\end{prop}
+\begin{proof}
+    We also only show if part, and this can be achieved by taking $\delta=0$ in the proof of Proposition~\ref{prop:delta midpoint}.
+\end{proof}
+
+We now discuss the Hopf--Rinow theorem.
+The proof is taken from~\cite[2.15]{alexanderAlexandrovGeometry2024}.
+
+\begin{defn}
+    A metric space $X$ is called \emph{proper} if any closed bounded subset of $X$ is compact.
+\end{defn}
+
+\begin{lem}
+    Proper intrinsic metric spaces are geodesic.
+\end{lem}
+\begin{proof}
+    Let $X$ be a proper intrinsic metric space.
+    Consider $1/n$-midpoints $z_n$ of two points $x,y\in X$.
+    Since they are contained in the ball $B(x,|xy|)$, they are contained in $\overline{B(x,|xy|)}$, which is bounded and closed, hence compact.
+    Therefore $\{z_n\}$ contains a convergent subsequence, which converge to the midpoint of $x$ and $y$, that is, the midpoint of $x$ and $y$ exists.
+    By Proposition~\ref{prop:midpoint}, $X$ is geodesic.
+\end{proof}
+
+\begin{thm}[Hopf--Rinow]
+    Locally compact complete intrinsic metric spaces are proper.
+\end{thm}
+\begin{proof}
+    Let $X$ be a locally compact complete intrinsic metric space.
+    For $x\in X$, define $\rho(x)$ to be the supremum of all $R>0$ such that $\overline{B(x,R)}$ is compact.
+    Since $X$ is locally compact, $\rho(x)>0$ for any $x\in X$.
+    It's suffice to show $\rho(x)=+\infty$ for some (and therefore any) $x$.
+    Suppose not, i.e., $\rho(x)<+\infty$.
+
+    First, notice that $B=\overline{B(x,\rho(x))}$ is compact.
+    Indeed, for any $\varepsilon>0$, $\overline{B(x,\rho(x)-\varepsilon)}$ is compact, and since $X$ is intrinsic, it is an $\varepsilon$-net of $B$, hence $B$ is compact.
+
+    Second, we claim that $|\rho(x)-\rho(y)|\leq|xy|$, and in particular, $\rho$ is continuous.
+    If this does not hold, we have $\rho(x)+|xy|<\rho(y)$.
+    Then $\overline{B(x,\rho(x)+\varepsilon)}$ is a closed subset of $\overline{B(y,\rho(y))}$ for sufficiently small $\varepsilon>0$, hence $\overline{B(x,\rho(x)+\varepsilon)}$ is compact.
+    This contradicts to the definition of $\rho$.
+
+    Now let $\varepsilon=\min_{y\in B}\rho(y)$, since $B$ is compact, the minimum can be reached, and $\varepsilon>0$.
+    Choose a finite $\varepsilon/10$-net $\{a_1,\cdots,a_n\}$ in $B$, set
+    \[W=\bigcup_{i=1}^n\overline{B(a_i,\varepsilon)}.\]
+    Then $W$ is compact.
+    However, $\overline{B(x,\rho(x)+\varepsilon/10)}\subset W$, this means $\overline{B(x,\rho(x)+\varepsilon/10)}$ is compact.
+    This contradicts to the definition of $\rho$.
+    Hence we must have $\rho(x)=+\infty$.
+\end{proof}
+
+\begin{cor}
+    Locally compact complete intrinsic metric spaces are geodesic.
+\end{cor}
+
+\begin{rem}
+    After stating Hopf--Rinow theorem in 2.1, \cite{buragoADAlexandrovSpaces1992}~claims that the limit of geodesics is still a geodesic.
+    This is not correct.
+    Think about the surface of a solid cylinder, consider the geodesics connecting antipodal points converging to the upper face.
+    They converge to a semicircle, but it is not a geodesic---now the shortest path is a line segement on the upper face.
+\end{rem}
+
+\begin{defn}
+    A \emph{triangle} on an intrinsic metric space $X$ is the collection of three points $p,q,r\in X$ and three geodesics $[qr],[pr],[pq]$, denoted by $\triangle pqr$.
+\end{defn}
+
+\begin{nota}
+    Denote $S^2_k$ the $2$-dimensional complete simply-connected Riemannian manifold of curvature $k$.
+\end{nota}
+
+\begin{defn}
+    Let $p,q,r$ be a triple of points in an intrinsic metric space $X$.
+    Define their \emph{comparison triangle on $S^2_k$}, denoted by $\tilde{\triangle}^kpqr$, is the triangle with vertices $\tilde{p},\tilde{q},\tilde{r}$ on $S^2_k$ with $|pq|=|\tilde{p}\tilde{q}|$, $|pr|=|\tilde{p}\tilde{r}|$, $|qr|=|\tilde{q}\tilde{r}$.
+    Comparison triangle always exists up to a rigid motion when $k\leq 0$, and when $k>0$ we ask the perimeter of $\triangle{pqr}$ is less than $2\pi/\sqrt{k}$.
+    We denote $\tilde{\measuredangle}^kpqr$ by the angle at vertex $\tilde{q}$ in triangle $\tilde{\triangle}^kpqr$.
+\end{defn}

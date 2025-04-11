@@ -1,0 +1,51 @@
+\documentclass[a4paper]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[shortlabels]{enumitem}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{eg}[thm]{Example}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\md}{md}
+
+\numberwithin{equation}{section}
+
+\title{A.D.\ Alexandrov spaces with curvature bounded below explained}
+\author{Mengchen Zeng}
+\date{\today}
+\subjclass[2020]{53C45, 53C23}
+\keywords{Alexandrov spaces, Toponogov's angle comparison theorem}
+\email{matthewzenm@icloud.com}
+\address{School of Mathematical Sciences, Beijing Normal University, Beijing 100875, People's Republic of China.}
+
+\begin{document}
+\begin{abstract}
+    This is an extended version of Burago, Gromov and Perel'man's paper \emph{A.D.\ Alexandrov spaces with curvature bounded below}~\cite{buragoADAlexandrovSpaces1992}.
+    We review the proofs in the paper and add the omitted details into our article.
+    We do not intend to contain the original text in our article, however, we will cover the mathematical content of the paper.
+\end{abstract}
+
+\maketitle
+
+\input{files/metric.tex}
+\input{files/cbb.tex}
+
+\bibliographystyle{alpha}
+\bibliography{biblio}
+\end{document}
