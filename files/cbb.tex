@@ -1,9 +1,9 @@
 \section{Basic Concepts}
-\begin{defn}
+\begin{defn}\label{defn:CBB D condition}
     A locally complete space $X$ with intrinsic metric is called \emph{space with curvature $\geq k$} if in some neighborhood $U_x$ of each point $x\in X$ the following condition is satisfied:
     \begin{itemize}
         \item[(D)] for any four distinct points $(a;b,c,d)$ in $U_x$ we have the inequality
-        \[\tilde{\measuredangle}^kbac+\tilde{\measuredangle}^kbad+\tilde{\measuredangle}^kcad\leq 2\pi.\]
+        \[\tilde{\measuredangle}_kbac+\tilde{\measuredangle}_kbad+\tilde{\measuredangle}_kcad\leq 2\pi.\]
     \end{itemize}
     If $X$ is a $1$-dimensional manifold and $k>0$, we require in addition that $\diam{X}\leq\pi/\sqrt{k}$.
 \end{defn}
@@ -12,29 +12,29 @@ For traditional Toponogov's comparison theorem, we have the following condition.
 \begin{thm}\label{thm:CBB A condition}
     A geodesic space $X$ is a space with curvature $\geq k$ if and only if the following condition is satisfied:
     \begin{itemize}
-        \item[\rm (A)] for any triangle $\triangle{pqr}$ with vertices in $U_x$ and any point $s\in[qr]$, the inequality $|ps|\geq|\tilde{p}\tilde{s}|$ is satisfied, where $\tilde{s}$ is the point on the side $[\tilde{q}\tilde{r}]$ of the comparison triangle $\tilde{\triangle}^kpqr$ with $|qs|=|\tilde{q}\tilde{s}|$.
+        \item[\rm (A)] for any triangle $\triangle{pqr}$ with vertices in $U_x$ and any point $s\in[qr]$, the inequality $|ps|\geq|\tilde{p}\tilde{s}|$ is satisfied, where $\tilde{s}$ is the point on the side $[\tilde{q}\tilde{r}]$ of the comparison triangle $\tilde{\triangle}_kpqr$ with $|qs|=|\tilde{q}\tilde{s}|$.
     \end{itemize}
 \end{thm}
 
 To prove the only if part, we need the following lemma.
 
 \begin{lem}[Alexandrov]\label{lem:Alexandrov}
-    Let $\tilde{\triangle}^kpqs,\tilde{\triangle}^kprs$ be given on $S^2_k$, which are joined to each other in an exterior way along the side $[ps]$.
+    Let $\tilde{\triangle}_kpqs,\tilde{\triangle}_kprs$ be given on $S^2_k$, which are joined to each other in an exterior way along the side $[ps]$.
     Let there also be given $\tilde{\triangle}bcd$, where $|bc|=|pq|$, $|bd|=|pr|$, $|cd|=|qs|+|rs|$, and $|bc|+|bd|+|cd|<2\pi/\sqrt{k}$ in the case $k>0$.
-    Then $\tilde{\measuredangle}^kpsq+\tilde{\measuredangle}^kpsr\leq\pi$ ($\geq\pi$) if and only if $\tilde{\measuredangle}^kpqs\geq\tilde{\measuredangle}^kbcd$ and $\tilde{\measuredangle}^kprs\geq\tilde{\measuredangle}^kbdc$ (respectively $\tilde{\measuredangle}^kpqs\leq\tilde{\measuredangle}^kbcd$ and $\tilde{\measuredangle}^kprs\leq\tilde{\measuredangle}^kbdc$).
+    Then $\tilde{\measuredangle}_kpsq+\tilde{\measuredangle}_kpsr\leq\pi$ ($\geq\pi$) if and only if $\tilde{\measuredangle}_kpqs\geq\tilde{\measuredangle}_kbcd$ and $\tilde{\measuredangle}_kprs\geq\tilde{\measuredangle}_kbdc$ (respectively $\tilde{\measuredangle}_kpqs\leq\tilde{\measuredangle}_kbcd$ and $\tilde{\measuredangle}_kprs\leq\tilde{\measuredangle}_kbdc$).
 \end{lem}
 \begin{proof}
     Observe that in absolute geometry (Euclidean, spherical or non-Euclidean), when two sides are fixed, bigger angle is opposite to bigger side.
     Using a rigid motion, we can assume $q=c$ and $s\in[cd]$.
-    Then $\tilde{\measuredangle}^kpsq+\tilde{\measuredangle}^kpsr\leq\pi$ is equivalent to $\tilde{\measuredangle}^krsd\leq\tilde{\measuredangle}^kpsd$.
+    Then $\tilde{\measuredangle}_kpsq+\tilde{\measuredangle}_kpsr\leq\pi$ is equivalent to $\tilde{\measuredangle}_krsd\leq\tilde{\measuredangle}_kpsd$.
     Using observation, this is equivalent to $|pd|\geq|pr|=|bd|$.
-    Using observation again, this is equivalent to $\tilde{\measuredangle}^kpqs\geq\tilde{\measuredangle}^kbcd$.
+    Using observation again, this is equivalent to $\tilde{\measuredangle}_kpqs\geq\tilde{\measuredangle}_kbcd$.
     The other inequality holds similarly.
 \end{proof}
 
 \begin{proof}[Proof of $\mathrm{(D)}\implies\mathrm{(A)}$]
-    Apply Alexandrov lemma (Lemma~\ref{lem:Alexandrov}) to comparison triangle $\tilde{\triangle}^kpqs$ and $\tilde{\triangle}^kpsr$.
-    By (D), we have $\tilde{\measuredangle}^kpsq+\tilde{\measuredangle}^kpsr\leq\pi$ (since $\tilde{\measuredangle}^kqsr=\pi$), hence $\tilde{\measuredangle}^kpqs\geq\tilde{\measuredangle}^kpqr$, that is, $|ps|\geq|\tilde{p}\tilde{s}|$.
+    Apply Alexandrov lemma (Lemma~\ref{lem:Alexandrov}) to comparison triangle $\tilde{\triangle}_kpqs$ and $\tilde{\triangle}_kpsr$.
+    By (D), we have $\tilde{\measuredangle}_kpsq+\tilde{\measuredangle}_kpsr\leq\pi$ (since $\tilde{\measuredangle}_kqsr=\pi$), hence $\tilde{\measuredangle}_kpqs\geq\tilde{\measuredangle}_kpqr$, that is, $|ps|\geq|\tilde{p}\tilde{s}|$.
 \end{proof}
 
 The proof of converse needs more work.
@@ -42,7 +42,7 @@ We need the notion of angle between two geodesics with the same origin.
 
 \begin{nota}
     Let $\gamma,\sigma$ be geodesics with origin $p$, $q,r$ on $\gamma,\sigma$ respectively and $x=|pq|,y=|pr|$.
-    Denote $\omega_k(x,y)=\tilde{\measuredangle}^kqpr$.
+    Denote $\omega_k(x,y)=\tilde{\measuredangle}_kqpr$.
 \end{nota}
 
 \begin{defn}\label{defn:angle}
@@ -55,7 +55,7 @@ We need the notion of angle between two geodesics with the same origin.
 We need to show angle between two geodesics does not depend on the choice of $k$.
 
 \begin{lem}
-    Let $p,q,r$ be three points in a metric space, then $k\mapsto\tilde{\measuredangle}^kqpr$ is increasing.
+    Let $p,q,r$ be three points in a metric space, then $k\mapsto\tilde{\measuredangle}_kqpr$ is increasing.
 \end{lem}
 \begin{proof}
     This follows from the triangle version of the Toponogov's comparison theorem (cf.~\cite[Theorem 12.2.2]{petersenRiemannianGeometry2016}).
@@ -71,30 +71,30 @@ We need to show angle between two geodesics does not depend on the choice of $k$
     We adopt geodesic polar coordinate.
     Since geodesic balls are convex, we have
     \begin{align*}
-        A[\tilde{\triangle}pqr]&\leq\int_{0}^{\ell}\int_{0}^{\theta}\sn^k(r)\ ds\ dr\\
-        &=\theta\md^k(\ell)\\
-        &\leq\pi\md^k(\ell)\\
+        A[\tilde{\triangle}pqr]&\leq\int_{0}^{\ell}\int_{0}^{\theta}\sn_k(r)\ ds\ dr\\
+        &=\theta\md_k(\ell)\\
+        &\leq\pi\md_k(\ell)\\
         &=\pi(\ell^2+o(\ell^2)).
     \end{align*}
-    Here $\sn^k{}$ and $\md^k{}$ are solutions to initial value problem
-    \[\sn^k(t)+k(\sn^k)''(t)=0,\ \sn^k(0)=0,\ (\sn^k)'(0)=1,\]
+    Here $\sn_k{}$ and $\md_k{}$ are solutions to initial value problem
+    \[\sn_k(t)+k(\sn_k)''(t)=0,\ \sn_k(0)=0,\ (\sn_k)'(0)=1,\]
     and
-    \[\md^k(t)+k(\md^k)''(t)=1,\ \md^k(0)=0,\ (\md^k)'(0)=0.\qedhere\]
+    \[\md_k(t)+k(\md_k)''(t)=1,\ \md_k(0)=0,\ (\md_k)'(0)=0.\qedhere\]
 \end{proof}
 
 \begin{lem}
     Let $p,q,r\in X$, with $|pq|+|qr|+|rp|<2\pi/\sqrt{k}$ when $k>0$.
     Let $\ell=\max\{|pq|,|pr|\}$, $k<K$, then we have
     \begin{equation}
-        0<\tilde{\measuredangle}^Kqpr-\tilde{\measuredangle}^kqpr\leq\pi(|K|+|k|)(\ell^2+o(\ell^2)).\label{eq:lem angle}
+        0<\tilde{\measuredangle}_kqpr-\tilde{\measuredangle}_kqpr\leq\pi(|K|+|k|)(\ell^2+o(\ell^2)).\label{eq:lem angle}
     \end{equation}
 \end{lem}
 \begin{proof}
     By previous lemmas and Gauss--Bonnet formula, we have
     \begin{align*}
-        0&<\tilde{\measuredangle}^Kqpr-\tilde{\measuredangle}^kqpr\\
-        &<\tilde{\measuredangle}^Kqpr+\tilde{\measuredangle}^Kpqr+\tilde{\measuredangle}^Kprq-\tilde{\measuredangle}^kqpr-\tilde{\measuredangle}^kpqr-\tilde{\measuredangle}^kprq\\
-        &=KA[\tilde{\triangle}^Kpqr]-kA[\tilde{\triangle}^kpqr]\\
+        0&<\tilde{\measuredangle}_kqpr-\tilde{\measuredangle}_kqpr\\
+        &<\tilde{\measuredangle}_kqpr+\tilde{\measuredangle}_kpqr+\tilde{\measuredangle}_kprq-\tilde{\measuredangle}_kqpr-\tilde{\measuredangle}_kpqr-\tilde{\measuredangle}_kprq\\
+        &=KA[\tilde{\triangle}_kpqr]-kA[\tilde{\triangle}_kpqr]\\
         &\leq(|K|+|k|)(\ell^2+o(\ell^2)).\qedhere
     \end{align*}
 \end{proof}
@@ -104,13 +104,13 @@ Let $\ell\to 0$ in inequality~\eqref{eq:lem angle}, we have thus shown the angle
 Let us back to our discussion on spaces with curvature bounded below.
 (A) has the following corollary.
 \begin{prop}\label{prop:CBB B condition}
-    If (A) is satisfied, then for any geodesics $\gamma,\sigma$ with origin $p$, the function $\omega_k(x,y)$ is non-increasing with respective to each variable $x,y$ when $x,y$ are sufficiently small.
+    If {\rm (A)} is satisfied, then for any geodesics $\gamma,\sigma$ with origin $p$, the function $\omega_k(x,y)$ is non-increasing with respective to each variable $x,y$ when $x,y$ are sufficiently small.
 \end{prop}
 \begin{proof}
     Let $U_p$ be a neighborhood of $p$ such that (A) holds, $x,x'\in\gamma$, $y\in\sigma$ and $x$ is between $p$ and $x'$.
     We must show $\omega_k(x,y)\geq\omega_k(x',y)$.
     By (A), we have $|yx|\geq|\tilde{y}\tilde{x}|$, then we have
-    \[\omega_k(x,y)=\tilde{\measuredangle}^kypx\geq\measuredangle{\tilde{y}\tilde{p}\tilde{x}}=\tilde{\measuredangle}^kypx'=\omega_k(x',y).\]
+    \[\omega_k(x,y)=\tilde{\measuredangle}_kypx\geq\measuredangle{\tilde{y}\tilde{p}\tilde{x}}=\tilde{\measuredangle}_kypx'=\omega_k(x',y).\]
     Similarly $\omega_k(x,y)$ is non-increasing in $y$.
 \end{proof}
 
@@ -121,17 +121,26 @@ By Proposition~\ref{prop:CBB B condition}, the angle between two geodesics with 
 \end{prop}
 \begin{proof}
     A proof for general metric space can be found in~\cite[6.5]{alexanderAlexandrovGeometry2024}.
-    But for spaces with curvature $\geq k$, notice that angles in $S^2_k$ satisfy triangle inequality, and then we can take the limit.
+    But for spaces with curvature $\geq k$, notice that angles in space form satisfy triangle inequality, and then we can take the limit.
 \end{proof}
 
 Proposition~\ref{prop:CBB B condition}~also has the following direct corollaries.
-\begin{cor}
+\begin{cor}\label{cor:CBB condition C}
     If {\rm (A)} is satisfied, then
     \begin{itemize}
-        \item[\rm (C)] For any triangle $\triangle{pqr}$ contained in $U_x$, none of its angles is less than the corresponding angle of the comparison triangle $\tilde{\triangle}^kpqr$ in $S^2_k$.
+        \item[\rm (C)] For any triangle $\triangle{pqr}$ contained in $U_x$, none of its angles is less than the corresponding angle of the comparison triangle $\tilde{\triangle}_kpqr$ in $S^2_k$.
         \item[\rm (C\textsubscript{1})] If $r$ is an interior point of a geodesic $[pq]$, then for any geodesic $[rs]$, we have $\measuredangle{prs}+\measuredangle{qrs}=\pi$. 
     \end{itemize}
 \end{cor}
+
+(C\textsubscript{1}) has a corollary that geodesics do not branch.
+\begin{prop}\label{prop:branch}
+    Let $[px],[py]$ be geodesics, such that $[ps]\subset[px]\cap[py]$, then $[px]\subset[py]$ or $[py]\subset[px]$.
+\end{prop}
+\begin{proof}
+    By (C\textsubscript{1}), we have $\measuredangle{psy}+\measuredangle{xsy}=\pi$.
+    But $\measuredangle{psy}=\pi$, since $p,s,y$ are colinear, hence $\measuredangle{xsy}=0$, and result follows.
+\end{proof}
 
 Now we are ready to prove $\mathrm{(A)}\implies\mathrm{(D)}$.
 \begin{proof}[Proof of $\mathrm{(A)}\implies\mathrm{(D)}$]
@@ -143,9 +152,15 @@ Now we are ready to prove $\mathrm{(A)}\implies\mathrm{(D)}$.
     \end{align*}
     Apply Proposition~\ref{prop:CBB B condition}, we have
     \begin{align*}
-        \tilde{\measuredangle}^kadb+\tilde{\measuredangle}^kbdc+\tilde{\measuredangle}^kcda&\leq\measuredangle{adb}+\measuredangle{bdc}+\measuredangle{cda}\\
+        \tilde{\measuredangle}_kadb+\tilde{\measuredangle}_kbdc+\tilde{\measuredangle}_kcda&\leq\measuredangle{adb}+\measuredangle{bdc}+\measuredangle{cda}\\
         &\leq 2\pi.
     \end{align*}
     Since angles vary continuously in $S^2_k$, let $d\to p$, we obtain
-    \[\tilde{\measuredangle}^kapb+\tilde{\measuredangle}^kbpc+\tilde{\measuredangle}^kcpa\leq 2\pi.\qedhere\]
+    \[\tilde{\measuredangle}_kapb+\tilde{\measuredangle}_kbpc+\tilde{\measuredangle}_kcpa\leq 2\pi.\qedhere\]
 \end{proof}
+
+% \begin{prop}
+%     Let $[pa]$ be a geodesic and $\{a_i\}\subset[pa]$, $b\notin[pa]$.
+%     Assume $a_i\to p$ as $i\to\infty$, then
+%     \[\limsup_{i\to\infty}\measuredangle{aa_ib}\leq\measuredangle{apb}.\]
+% \end{prop}

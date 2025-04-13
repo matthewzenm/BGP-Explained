@@ -91,7 +91,7 @@ The proof is taken from~\cite[2.15]{alexanderAlexandrovGeometry2024}.
     Let $X$ be a locally compact complete intrinsic metric space.
     For $x\in X$, define $\rho(x)$ to be the supremum of all $R>0$ such that $\overline{B(x,R)}$ is compact.
     Since $X$ is locally compact, $\rho(x)>0$ for any $x\in X$.
-    It's suffice to show $\rho(x)=+\infty$ for some (and therefore any) $x$.
+    It's sufficient to show $\rho(x)=+\infty$ for some (and therefore any) $x$.
     Suppose not, i.e., $\rho(x)<+\infty$.
 
     First, notice that $B=\overline{B(x,\rho(x))}$ is compact.
@@ -123,6 +123,15 @@ The proof is taken from~\cite[2.15]{alexanderAlexandrovGeometry2024}.
 \end{rem}
 
 \begin{defn}
+    Let $X$ be an intrinsic metric space.
+    A subset $S\subset X$ is called \emph{convex} if any two points $p,q\in S$ can be joined with a geodesic, and the geodesic $[pq]\subset S$.
+\end{defn}
+
+\begin{rem}
+    The definition of convexity in ambiguous in~\cite{buragoADAlexandrovSpaces1992}, so we adopt the usual definition.
+\end{rem}
+
+\begin{defn}
     A \emph{triangle} on an intrinsic metric space $X$ is the collection of three points $p,q,r\in X$ and three geodesics $[qr],[pr],[pq]$, denoted by $\triangle pqr$.
 \end{defn}
 
@@ -132,7 +141,7 @@ The proof is taken from~\cite[2.15]{alexanderAlexandrovGeometry2024}.
 
 \begin{defn}
     Let $p,q,r$ be a triple of points in an intrinsic metric space $X$.
-    Define their \emph{comparison triangle on $S^2_k$}, denoted by $\tilde{\triangle}^kpqr$, is the triangle with vertices $\tilde{p},\tilde{q},\tilde{r}$ on $S^2_k$ with $|pq|=|\tilde{p}\tilde{q}|$, $|pr|=|\tilde{p}\tilde{r}|$, $|qr|=|\tilde{q}\tilde{r}$.
+    Define their \emph{comparison triangle on $S^2_k$}, denoted by $\tilde{\triangle}_kpqr$, is the triangle with vertices $\tilde{p},\tilde{q},\tilde{r}$ on $S^2_k$ with $|pq|=|\tilde{p}\tilde{q}|$, $|pr|=|\tilde{p}\tilde{r}|$, $|qr|=|\tilde{q}\tilde{r}$.
     Comparison triangle always exists up to a rigid motion when $k\leq 0$, and when $k>0$ we ask the perimeter of $\triangle{pqr}$ is less than $2\pi/\sqrt{k}$.
-    We denote $\tilde{\measuredangle}^kpqr$ by the angle at vertex $\tilde{q}$ in triangle $\tilde{\triangle}^kpqr$.
+    We denote $\tilde{\measuredangle}_kpqr$ by the angle at vertex $\tilde{q}$ in triangle $\tilde{\triangle}_kpqr$.
 \end{defn}

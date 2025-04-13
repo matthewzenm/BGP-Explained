@@ -1,0 +1,214 @@
+\section{Globalization Theorem}
+In this section we introduce the \emph{globalization theorem}.
+
+\begin{thm}[Globalization theorem]
+    Let $X$ be a complete geodesic metric space with curvature $\geq k$.
+    Then for any quadruple of points $(a;b,c,d)$, the inequality
+    \[\tilde{\measuredangle}_kbac+\tilde{\measuredangle}_kcad+\tilde{\measuredangle}_kdab\leq 2\pi\]
+    holds.
+\end{thm}
+
+Globalization theorem is the most important structure theorem of space with curvature $\geq k$.
+Simpler proofs can be found in~\cite{plautMetricSpacesCurvature2001}~or~\cite{alexanderAlexandrovGeometry2024} (where without geodesic assumption).
+However, we shall present the original proof in~\cite{buragoADAlexandrovSpaces1992}.
+
+\begin{defn}
+    Define the \emph{size} of the quadruple $(a;b,c,d)$, denoted by $S(a;b,c,d)$, is the greatest number of the perimeters of triangles $\triangle{bac},\triangle{cad},\triangle{dab}$.
+    Define the \emph{excess} of the quadruple $(a;b,c,d)$, denoted by $E(a;b,c,d)$, is $\max\{0,\tilde{\measuredangle}_kbac+\tilde{\measuredangle}_kcad+\tilde{\measuredangle}_kdab-2\pi\}$.
+\end{defn}
+
+\begin{lem}\label{lem:subadditive of S}
+    Let $p,q,r,s$ be points in an intrinsic metric space, and let $t$ lie on a geodesic joining $p$ and $q$.
+    Then
+    \[S(p;q,r,s)\geq\max\{S(p;t,r,s),S(t;p,q,r),S(t;p,q,s)\}.\]
+\end{lem}
+\begin{proof}
+    This is evident from the triangle inequality.
+\end{proof}
+
+\begin{lem}\label{lem:pre subadditive of E}
+    Let $\triangle{pqr},\triangle{prx},\triangle{qry}$ be given on $S^2_k$ such that $|rx|=|ry|$, $|pq|=|px|+|py|$, $\measuredangle{pxr}+\measuredangle{pyr}\geq\pi$.
+    Then we have
+    \[\measuredangle{qpr}-\measuredangle{xpr}\leq\measuredangle{qyr}+\measuredangle{pxr}-\pi.\]
+    If $k>0$, then in addition we assume that $\max\{|pr|,|pq|\}+10|px|<\pi/2\sqrt{k}$.
+\end{lem}
+\begin{proof}
+    We may suppose $\triangle{pxr},\triangle{qyr}$ lie in $\triangle{pqr}$ and do not overlap.
+    Let $z\in[pq]$ with $|pz|=|px$.
+    We calculate the total angle at $x,y,z$.
+    Denote $\delta(\triangle)$ the excess of a triangle, i.e.\ the difference between its sum of interior angles and $\pi$.
+    Then we have
+    \begin{align*}
+        5\pi=&(\measuredangle{pxr}+\measuredangle{qyr})+(\pi+\delta(\triangle{xyr})-\measuredangle{xry})+(\pi+\delta(\triangle{xyz}))\\
+        &+(\pi+\delta(\triangle{xpz})+\measuredangle{qpr}-\measuredangle{xpr})+(\pi+\delta(\triangle{qyz})-\measuredangle{yqz}).
+    \end{align*}
+    If $k\leq 0$, then $\delta(\triangle)\leq 0$, the inequality evidently holds.
+    If $k>0$, the condition $\max\{|pr|,|pq|\}+10|px|<\pi/2\sqrt{k}$ guarantees all $\delta(\triangle)$'s are not greater than the half of $\min\{\measuredangle{xry},\measuredangle{yqz}\}$, hence the inequality still holds.
+\end{proof}
+
+\begin{lem}\label{lem:subadditive of E}
+    Let $p,q,r,s$ be points in an intrinsic metric space, and let $t$ lie on a geodesic joining $p$ and $q$.
+    Then
+    \[E(p;q,r,s)\leq E(p;t,r,s)+E(t;p,q,r)+E(t;p,q,s).\]
+\end{lem}
+\begin{proof}
+    By Lemma~\ref{lem:pre subadditive of E}, we have the inequalities
+    \begin{gather*}
+        E(t;p,q,r)\geq\tilde{\measuredangle}_kqpr-\tilde{\measuredangle}_ktpr,\\
+        E(t;p,q,s)\geq\tilde{\measuredangle}_kqps-\tilde{\measuredangle}_ktps.
+    \end{gather*}
+    And by definition, we have
+    \begin{gather*}
+        E(p;t,r,s)=\tilde{\measuredangle}_ktpr+\tilde{\measuredangle}_krps+\tilde{\measuredangle}_ktps-2\pi,
+    \end{gather*}
+    add all three formulas together, we obtain
+    \begin{align*}
+        E(p;t,r,s)+E(t;p,q,r)+E(t;p,q,s)&\geq\tilde{\measuredangle}_kqpr+\tilde{\measuredangle}_krps+\tilde{\measuredangle}_kqps\\
+        &=E(p;q,r,s).\qedhere
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of globalization theorem]
+    Let us assume the theorem is false.
+    Then there exists a point $p\in X$ and $\ell>0$ ($\ell<2\pi/\sqrt{k}$ if $k>0$) such that
+    \begin{enumerate}[(a)]
+        \item The excess of any quadruple of size $\leq 0.99\ell$ lying in $B_p(100\ell)$ is zero.
+        \item There is a quadruple of size $\leq\ell$ lying in $B_p(10\ell)$ and having a positive excess.
+    \end{enumerate}
+    In fact, fix $\ell_0$ with a quadruple $(a;b,c,d)$ such that $S(a;b,c,d)=\ell_0$ and $E(a;b,c,d)>0$.
+    Let $(a;b,c,d)$ be contained in $B_{p_0}(10\ell_0)$, if all quadruples lying in $B_{p_0}(100\ell_0)$ with size $\leq 0.99\ell_0$ have zero excess, choose $\ell=\ell_0$.
+    Otherwise let $(a_1;b_1,c_1,d_1)$ be another quadruple with positive excess that has size $\ell_1\leq 0.99\ell_0$, assume the quadruple is contained in $B_{p_1}(10\ell_1)$.
+    Then $|p_0p_1|\leq 1000\ell_0$.
+    Construct inductively, either we obtain $\ell$ after finite steps, or we obtain a Cauchy sequence $\{p_n\}$.
+    Since $X$ is complete, $\{p_n\}$ converges to some $p$.
+    Then in any small neighborhood of $p$, (D) is violated, contradiction.
+
+    We claim that a quadruple $(a;b,c,d)$ of size $\leq\ell$ lying in $B_p(20\ell)$ has zero excess if
+    \begin{equation}
+        |ab|\leq 0.01\ell,\ |cd|\geq 0.1\ell+\max\{|ac|,|ad|\}.\label{eq:proof globalization 1}
+    \end{equation}
+    If $k>0$, we ask in addition that $\max\{|ac|,|ad|\}<\pi/2\sqrt{k}$.
+    We assume there is a quadruple $(a;b,c,d)$ violates this, and let $E(a;b,c,d)=\delta>0$.
+    Let $x\in[ac]$ with $|ax|=\varepsilon\leq 0.01\ell$.
+    By the triangle inequality, we have
+    \[S(x;a,b,c)\leq 0.99\ell,\ S(a;x,b,d)\leq 0.99\ell.\]
+    Hence by Lemma~\ref{lem:subadditive of E}, we have
+    \[E(a;b,c,d)\leq E(x;a,c,d).\]
+    Now let $y\in[dx]$ such that $|xy|=\varepsilon$.
+    Then similarly, we have
+    \[E(y;x,c,d)\geq E(x;a,c,d)\geq\delta.\]
+    Notice that $S(y;x,c,d)\leq\ell$, and it satisfies an inequality analogous to~\eqref{eq:proof globalization 1}.
+    Finally, we have
+    \begin{equation}
+        |yc|+|yd|\leq|ac|+|ad|-\frac{\delta^2\varepsilon}{2}.\label{eq:proof globalization 2}
+    \end{equation}
+    In fact, since $E(x;a,b,c)=0$, using Proposition~\ref{prop:CBB B condition}, we have
+    \[\tilde{\measuredangle}_kxab\geq\tilde{\measuredangle}_kcab.\]
+    Since $E(a;x,d,b)=0$, we have
+    \[2\pi\geq\tilde{\measuredangle}_kxab+\tilde{\measuredangle}_kdab+\tilde{\measuredangle}_kxad.\]
+    Moreover, we have
+    \[\tilde{\measuredangle}_kdac+\tilde{\measuredangle}_kdab+\tilde{\measuredangle}_kcab=2\pi+\delta,\]
+    and
+    \[\pi\geq\tilde{\measuredangle}_kdac,\]
+    add all these inequalities, we obtain $\tilde{\measuredangle}_kxad\leq\pi-\delta$.
+    Similarly we have $\tilde{\measuredangle}yxc\leq\pi-\delta$, hence by first variation inequality (cf.~\cite[6.7]{alexanderAlexandrovGeometry2024}), we have
+    \begin{gather*}
+        |dx|\leq|da|+\left(1-\frac{\delta^2}{4}\right)\varepsilon,\\
+        |cy|\leq|cx|+\left(1-\frac{\delta^2}{4}\right)\varepsilon,
+    \end{gather*}
+    and
+    \begin{gather*}
+        |cx|=|ca|-\varepsilon,\\
+        |dy|=|dx|-\varepsilon.
+    \end{gather*}
+    Add all these inequalities, we obtain~\eqref{eq:proof globalization 2}.
+    Therefore with a counterexample, we can construct another counterexample with sum of two sides decreases $\delta^2\varepsilon/2$.
+    After no more than $[2\ell/\delta^2\varepsilon]+1$ steps we can reach a contradiction.
+
+    Now we consider the general case.
+    Let $(a;b,c,d)$ be a quadruple of size $\leq\ell$ lying in $B_p(10\ell)$ with positive excess.
+    Choose $x\in[ab]$ such that $|ax|=\varepsilon\leq 0.001\ell$ (if $k>0$, we ask $10\varepsilon<2\pi/\sqrt{k}-\ell$), by Lemma~\ref{lem:subadditive of S}, the quadruples $(a;x,c,d)$, $(x;a,b,c)$, $(x;a,b,d)$ all have size $\leq\ell$.
+    Hence we reduce our study to the case of $|ab|=\varepsilon$.
+    Next we want to reduce our consideration to a quadruple $(x;y,z,t)$ of size $\leq\ell$ such that $|xy|\leq 2\varepsilon,|xz|\leq 2\varepsilon$.
+    Divide $[ac]$ into segements $[aa_1],[a_1a_2],\cdots,[a_{n-1}c]$ with each of which has length $\leq\varepsilon$.
+    By Lemma~\ref{lem:subadditive of E}, at least one of the quadruples $(a;a_1,b,d)$, $(a_1;a,b,c)$, $(a_1;a,c,d)$ has positive excess.
+    If one of the first two has positive excess, then we are done.
+    Otherwise one of the quadruples $(a_1;a_2,a,d)$, $(a_2;a_1,a,c)$, $(a_2;a_1,c,d)$ has positive excess.
+    Continue ``thinning out'' the quadruples with positive excess until we get a quadruple we want.
+    Finally, let $(a;b,c,d)$ be a quadruple of size $\leq\ell$ with positive excess for which $|ab|\leq 2\varepsilon$, $|ac|\leq 2\varepsilon$.
+    Choose $x\in[ad]$ with $|cx|=|dx|$.
+    Then we have
+    \[|cx|\leq\frac{\ell}{2}+2\varepsilon.\]
+    Lemma~\ref{lem:subadditive of E}~tells us that at least one of the quadruples $(a;x,b,c)$, $(x;a,b,d)$, $(x;a,c,d)$ has positive excess.
+    But $S(a;x,b,c)\leq 0.99\ell$, hence $E(a;x,b,c)=0$.
+    Without loss of generality, we assume $E(x;a,c,d)>0$.
+    Choose $y\in[ax]$ with $|xy|=\varepsilon$.
+    Then Lemma~\ref{lem:subadditive of E}~tells us that at least one of the quadruples $(x;y,c,d)$, $(y;x,a,c)$, $(y;x,a,d)$ has positive excess.
+    However, $(x;y,c,d)$ is the situation considered in~\eqref{eq:proof globalization 1}, $(y;x,a,c)$ is small, $\tilde{\measuredangle}_kayx=0$, both of them has zero excess, contradiction!
+    Hence the theorem holds.
+\end{proof}
+
+We now give some application of globalization theorem.
+
+\begin{thm}
+    Let $X$ be a complete geodesic space with curvature $\geq k$, $k>0$, then $\diam{X}\leq\pi/\sqrt{k}$.
+\end{thm}
+This proof is partly taken from~\cite[Theorem 10.4.1]{buragoCourseMetricGeometry2001}~and~\cite[Theorem 6.2]{shiohamaIntroductionGeometry1993}.
+\begin{proof}
+    Suppose the theorem is false.
+    Let $p,q$ be points with $|pq|=(\pi+\varepsilon)/\sqrt{k}$, where $0<\varepsilon<0.1\pi$, and $m$ be a midpoint of them.
+    Let $U=B_m(\varepsilon)$.
+
+    First we show that $U$ contains a point that does not lie on $[pq]$.
+    Suppose not.
+    For every $x\in X$ there is a geodesic $\gamma$ joining $x$ and $m$.
+    Our assumption tells that $\gamma$ coincides with $[pq]$ on a subinterval.
+    By Proposition~\ref{prop:branch}, geodesics do not branch, it follows that $x$ belongs to a unique geodesic containing $[pm]$.
+    Hence $X$ is covered by two geodesics starting from $m$ passing through $p$ and $q$, hence $X$ is a $1$-dimensional manifold.
+    By Definition~\ref{defn:CBB D condition}, $\diam{X}\leq\pi/\sqrt{k}$, contradiction!
+
+    Choose $x\in U\setminus[pq]$, then by triangle inequality, $\triangle{pmx}$, $\triangle{qmx}$ have perimeters less than $2\pi/\sqrt{k}$.
+    Let $\tilde{p},\tilde{q},\tilde{m},\tilde{x}$ on $S^2_k$ satisfy $|pq|=|\tilde{p}\tilde{q}|$ and $\tilde{m}$ be the midpoint, $|mx|=|\tilde{m}\tilde{x}|$, $\measuredangle{pmx}=\measuredangle{\tilde{p}\tilde{m}\tilde{x}}$ and $\measuredangle{qmx}=\measuredangle{\tilde{q}\tilde{m}\tilde{x}}$.
+    By Corollary~\ref{cor:CBB condition C}~and globalization theorem (which implies $U_x=X$), we have $|\tilde{p}\tilde{x}|\geq|px|$ and $|\tilde{q}\tilde{x}|\geq|qx|$.
+    On $S^2_k$, $\tilde{p},\tilde{m},\tilde{q}$ are on a great sphere, hence
+    \[|\tilde{p}\tilde{x}|+|\tilde{q}\tilde{x}|<|\tilde{p}\tilde{m}|+|\tilde{q}\tilde{m}|.\]
+    Thus
+    \begin{align*}
+        |pq|&=|\tilde{p}\tilde{m}|+|\tilde{q}\tilde{m}|\\
+        &>|\tilde{p}\tilde{x}|+|\tilde{q}\tilde{x}|\\
+        &\geq|px|+|qx|,
+    \end{align*}
+    contradicting to the triangle inequality.
+    Therefore the theorem holds.
+\end{proof}
+
+\begin{thm}
+    Let $X$ be a complete geodesic space with curvature $\geq k$, $k>0$.
+    Then for any three points $a,b,c\in X$ we have $|ab|+|bc|+|ac|\leq 2\pi/\sqrt{k}$ and condition {\rm (D)} is satisfied for any quadruples of size $2\pi/\sqrt{k}$.
+    (Here we suppose that, if $|ab|=\pi/\sqrt{k}$ and $|ac|+|bc|=\pi/\sqrt{k}$, then $\tilde{\measuredangle}_kbac=\tilde{\measuredangle}_kabc=0$, $\tilde{\measuredangle}_kacb=\pi$.)
+\end{thm}
+\begin{proof}
+    We first prove the second assertion.
+    We check for a quadruple $(a;b,c,d)$ of size $2\pi/\sqrt{k}$.
+    We may suppose that $\max\{|ab|,|ac|,|ad|\}<\pi/\sqrt{k}$, and the perimeter of $\triangle{abd}$ is $2\pi/\sqrt{k}$.
+    We choose a sequence $\{b_i\}\subset[ab]$ converges to $b$ monotonically.
+    Then the perimeters of $\triangle{ab_ic},\triangle{ab_id}$ are all $<2\pi/\sqrt{k}$.
+    Applying Theorem~\ref{thm:CBB A condition}~to quadruple $(b_i;a,b,c)$, we have $\tilde{\measuredangle}_kb_iac\geq\tilde{\measuredangle}_kbac$.
+    Moreover, applying Theorem~\ref{thm:CBB A condition}~to quadruple $(b_i;a,b_{i+1},c)$, we have $\tilde{\measuredangle}_kb_iad\geq\tilde{\measuredangle}_kb_{i+1}ad$.
+    However, when $b_i\to b$, the perimeter of $\triangle{ab_id}\to 2\pi/\sqrt{k}$, hence $\tilde{\measuredangle}_kb_iad\downarrow\pi$, which implies $\tilde{\measuredangle}_kb_iad=\pi$ for all $i\in\mathbb{N}$.
+    Therefore, if $E(a;b,c,d)>0$, we can find a quadruple $(a;b_i,c,d)$ with positive excess but size $<2\pi/\sqrt{k}$, which is impossible.
+
+    Now we turn to the first assertion.
+    Assume the perimeter of $\triangle{abc}$ is greater than $2\pi/\sqrt{k}$.
+    We may suppose $\max\{|ab|,|bc|,|ac|\}<\pi/\sqrt{k}$ and $|bc|>|ac|$.
+    Now choose a point $x\in[bc]$ such that $|bx|\leq|cx|-|ac|$ and
+    \[\frac{2\pi}{\sqrt{k}}<|ax|+|cx|+|ac|<|ab|+|bc|+|ac|.\]
+    Let $y\in[ax]$ such that the perimeter of $\triangle{cxy}$ is equal to $2\pi/\sqrt{k}$.
+    Then
+    \[|xy|\geq|cx|-|ac|+|ay|>|bx|.\]
+    Since $|cx|<\pi/\sqrt{k}$ and $|xy|<\pi/\sqrt{k}$, we have $\tilde{\measuredangle}_kcxy=\pi$.
+    Now apply (D) to $(x;c,y,b)$, we have $\tilde{\measuredangle}_kbxy=0$.
+    But $|xb|<|xy|$, we have $|xy|=|xb|+|xy|$.
+    Thus $|xa|=|xb|+|ab|$, which contradicts to the choice of $x$.
+    Therefore the theorem holds.
+\end{proof}
