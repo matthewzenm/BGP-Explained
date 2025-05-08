@@ -1,0 +1,258 @@
+\section{Natural Constructions}
+
+\subsection{Direct Products}
+
+\begin{defn}
+    Let $X,Y$ be metric spaces.
+    Define their \emph{direct product}, denoted by $X\times Y$, to be the metric space with metric
+    \[|(x_1,y_1)(x_2,y_2)|=\sqrt{|x_1x_2|^2+|y_1y_2|^2}.\]
+\end{defn}
+
+Clearly, direct product of intrinsic metric spaces is intrinsic.
+
+\begin{prop}
+    The direct product of two (thus finite number of) intrinsic metric spaces with curvature $\geq 0$ is a space with curvature $\geq 0$.
+\end{prop}
+
+This proposition will become almost obvious if we notice the following equivalent modification of Definition~\ref{defn:CBB D condition}.
+
+\begin{lem}
+    Let $X$ be an intrinsic metric space, $X$ is a space with curvature $\geq k$ if and only if the following condition is satisfied:
+    \begin{itemize}
+        \item[\rm (D')] For any $x\in X$, there is a neighborhood $U_x$, such that for any quadruple $(a;b,c,d)$ lying in $U_x$, it is possible (impossible) to construct a quadruple $(\tilde{a};\tilde{b},\tilde{c},\tilde{d})$ on $S^2_k$, such that $[\tilde{a}\tilde{b}]$, $[\tilde{a}\tilde{c}]$, $[\tilde{a}\tilde{d}]$ divide the complete angle at $\tilde{a}$ into three angles each $\leq\pi$, where $|ab|=|\tilde{a}\tilde{b}|$, $|ac|=|\tilde{a}\tilde{c}|$, $|ad|=|\tilde{a}\tilde{d}|$ and $|\tilde{b}\tilde{c}|\geq|bc|$, $|\tilde{b}\tilde{d}|\geq|bd|$, $|\tilde{c}\tilde{d}|\geq|cd|$ (respectively $|\tilde{b}\tilde{c}|<|bc|$, $|\tilde{b}\tilde{d}|<|bd|$, $|\tilde{c}\tilde{d}|<|cd|$).
+    \end{itemize}
+\end{lem}
+
+\subsection{The Various Cones}
+
+\begin{defn}
+    Let $X$ be a metric space.
+    Define the \emph{cone} over $X$ with vertex $A$, denoted by $C_A(X)$, to be the quotient space $X\times[0,+\infty)/\sim$, where $(x_1,a_1)\sim(x_2,a_2)\sim A$ if and only if $a_1=a_2=0$.
+    Let $\Pi:C_A(X)\setminus\{A\}\to X$ be the natural projection.
+    The metric of the cone is defined by the cosine formula
+    \[|(x_1,a_1)(x_2,a_2)|=\sqrt{a_1^2+a_2^2-2a_1a_2\cos\min\{|x_1x_2|,\pi\}}.\]
+\end{defn}
+
+\begin{lem}\label{lem:cone intrinsic}
+    Let $X$ be a metric space.
+    \begin{enumerate}[\rm (a)]
+        \item If $X$ is intrinsic, then $C_A(X)$ is also intrinsic.
+        \item If $\gamma$ is a geodesic in $X$ of length $\leq\pi$, then $\Pi^{-1}(\gamma)$ is isometric to a plane sector with angle equal to the length of $\gamma$.
+        In particular, if $X$ is geodesic, $C_A(X)$ is geodesic.
+        \item If $\tilde\gamma$ is a geodesic in $C_A(X)$ that does not pass through $A$, then $\Pi(\tilde\gamma)$ is also a geodesic.
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    For (a), we choose the original (but equivalent) definition for intrinsic metric in~\cite{buragoADAlexandrovSpaces1992}:
+    For $x,y\in X$ and $\delta>0$, there exists a finite sequence of points $z_1,\cdots,z_n$ such that $|z_iz_{i+1}|<\delta$, and
+    \[\sum_{i=1}^{n-1}|z_iz_{i+1}|<|xy|+\delta.\]
+    Take $\delta\ll\pi$.
+    Since three points closed enough with angular metric can always be embedded into $S^2$, we reduce the exisence of $\delta$-midpoint to the following Euclidean geometry problem:
+    Let $A$ be the center of $S^2$, $x_1,x_2\in S^2$, $m$ be the midpoint of arc $[x_1x_2]$.
+    $\{m_i\}\subset S^2$ and $m_i\to m$ as $i\to\infty$.
+    Let $\tilde{x}_1,\tilde{x}_2,\tilde{m}_i$ on the ray $Ax_1,Ax_2,Am_i$ respectively, $\tilde{m}_i$ minimizes $|\tilde{x}_1\tilde{m}_i|+|\tilde{x}_2\tilde{m}_i|$.
+    Show that as $i\to\infty$, $|\tilde{x}_1\tilde{m}_i|+|\tilde{x}_2\tilde{m}_i|-|\tilde{x}_1\tilde{x}_2|$ is an infinitesimal of same order with $|x_1m_i|_{S^2}+|x_2m_i|_{S^2}-|x_1x_2|_{S^2}$.
+    This is nothing but some labor.
+
+    Now we handle (b).
+    Simple observation using law of cosines implies first part of (b).
+    By subdividing geodesic into pieces of length $<\pi$ if necessary, we obtain $C_A(X)$ is geodesic provided $X$ being geodesic.
+    Thus (b) is proved.
+
+    Now we deal with (c).
+    When $\tilde\gamma:[a,b]\to C_A(X)$ is a geodesic, we have for $t_1<t_2<t_3$ (subdivide if necessary)
+    \begin{align*}
+        |\tilde\gamma(t_1)\tilde\gamma(t_2)|+|\tilde\gamma(t_2)\tilde\gamma(t_3)|&=\sqrt{s_1^2+s_2^2-2s_1s_2\cos\measuredangle{x_1ox_2}}+\sqrt{s_2^2+s_3^2-2s_2s_3\cos\measuredangle{x_2ox_3}}\\
+        &\geq\sqrt{s_1^2+s_3^2-2s_1s_3\cos\measuredangle{x_1ox_3}}\\
+        &=|\tilde\gamma(t_1)\tilde\gamma(t_3)|,
+    \end{align*}
+    where $x_1,x_2,x_3$ are chosen on the Euclidean plane $E^2$ such that $|ox_1|=s_1$, $|ox_2|=s_2$, $|ox_3|=s_3$ and $\measuredangle{x_1ox_2}=|\Pi(\tilde\gamma(t_1))\Pi(\tilde\gamma(t_2))|$, $\measuredangle(x_2ox_3)=|\Pi(\tilde\gamma(t_2))\Pi(\tilde\gamma(t_3))|$.
+    Hence the triangle inequality turns into the equality for $\Pi(\tilde\gamma(t_1)),\Pi(\tilde\gamma(t_2)),\Pi(\tilde\gamma(t_3))$. 
+    Thus $L[\Pi(\tilde\gamma)]=|\Pi(\tilde\gamma(a))\Pi(\tilde\gamma(b))|$, $\gamma:=\Pi(\tilde\gamma)$ is a geodesic.
+\end{proof}
+
+\begin{prop}\label{prop:cone}
+    Let $X$ be a complete intrinsic metric space, then the following two conditions are equivalent:
+    \begin{enumerate}[\rm (a)]
+        \item $X$ is a space with curvature $\geq 1$;
+        \item $C_A(X)$ is a space with curvature $\geq 0$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (a)$\implies$(b):
+    Suppose there is a quadruple $(\tilde{a};\tilde{b},\tilde{c},\tilde{d})$ violates (D) in $C_A(X)$.
+    If $\tilde{a}=A$, let $\tilde{b}=(x_1,a_1)$, $\tilde{c}=(x_2,a_2)$, $\tilde{d}=(x_3,a_3)$, then
+    \[|\tilde{a}\tilde{b}|=a_1,\ |\tilde{a}\tilde{c}|=a_2,\ |\tilde{a}\tilde{d}|=a_3.\]
+    Thus by law of cosines and Theorem~\ref{thm:perimeter}, we have
+    \[\tilde{\measuredangle}_0{\tilde{b}\tilde{a}\tilde{c}}+\tilde{\measuredangle}_0{\tilde{c}\tilde{a}\tilde{d}}+\tilde{\measuredangle}_0{\tilde{d}\tilde{a}\tilde{b}}=|x_1x_2|+|x_2x_3|+|x_1x_3|\leq 2\pi,\]
+    contradiction.
+    So we assume $A$ is not in the quadruple and let $a=\Pi(\tilde{a}),\cdots,d=\Pi(\tilde{d})$.
+    By applying (D'), we can find $a_0,\cdots,d_0$ on $S^2$ such that $|a_0b_0|=|ab|$, $|a_0c_0|=|ac|$, $|a_0d_0|=|ad|$, and $|b_0c_0|\geq|bc|$, $|b_0d_0|\geq|bd|$, $|c_0d_0|\geq|cd|$.
+    Now we regard Euclidean space $E^3$ as the cone $C_{A_0}(S^2)$ over $S^2$ with projection $\Pi_0$.
+    We can find a quadruple $(\tilde{a}_0;\tilde{b}_0,\tilde{c}_0,\tilde{d}_0)$ in $E^3$ such that $|A_0\tilde{a}_0|=|A\tilde{a}|,\cdots,|A_0\tilde{d}_0|=|A\tilde{d}|$, and $\Pi(\tilde{a}_0)=a_0,\cdots,\Pi(\tilde{d}_0)=d_0$.
+    Thus we have $|\tilde{a}_0\tilde{b}_0|=|\tilde{a}\tilde{b}|$, $|\tilde{a}_0\tilde{c}_0|=|\tilde{a}\tilde{c}|$, $|\tilde{a}_0\tilde{d}_0|=|\tilde{a}\tilde{d}|$, and $|\tilde{b}_0\tilde{c}_0|\geq|\tilde{b}\tilde{c}|$, $|\tilde{b}_0\tilde{d}_0|\geq|\tilde{b}\tilde{d}|$, $|\tilde{c}_0\tilde{d}_0|\geq|\tilde{c}\tilde{d}|$.
+    Therefore the quadruple $(\tilde{a}_0;\tilde{b}_0,\tilde{c}_0,\tilde{d}_0)$ violates (D) in $E^3$, which is impossible.
+
+    (b)$\implies$(a):
+    Suppose there is a quadruple $(a;b,c,d)$ violates (D') in $X$.
+    By applying globalization theorem, the counterexample of quadruple can occur at any size, so we can assume the pairwise distances between the points in the quadruple are less than $\pi/2$.
+    Let $(a_0;b_0,c_0,d_0)$ be a quadruple on $S^2$ such that $|a_0b_0|=|ab|$, $|a_0c_0|=|ac|$, $|a_0d_0|=|ad|$, and $|b_0c_0|<|bc|$, $|b_0d_0|<|bd|$, $|c_0d_0|<|cd|$, and the segements $[a_0b_0],[a_0c_0],[a_0d_0]$ divide the complete angle at $a_0$ into three angle $\leq\pi$.
+    Consider $E^3=C_{A_0}(S^2)$ with projection $\Pi_0$.
+    We can find a quadruple $(\tilde{a}_0;\tilde{b}_0,\tilde{c}_0,\tilde{d}_0)$ on the same plane in $E^3$ such that $\Pi_0(\tilde{a}_0)=a_0,\cdots,\Pi_0(\tilde{d}_0)=d_0$, and quadruple $(\tilde{a};\tilde{b},\tilde{c},\tilde{d})$ in $C_A(X)$ such that $\Pi(\tilde{a})=a,\cdots,\Pi(\tilde{d})=d$ with $|A_0\tilde{a}_0|=|A\tilde{a}|,\cdots,|A_0\tilde{d}_0|=|A\tilde{d}|$.
+    Thus we have $|\tilde{a}_0\tilde{b}_0|=|\tilde{a}\tilde{b}|$, $|\tilde{a}_0\tilde{c}_0|=|\tilde{a}\tilde{c}|$, $|\tilde{a}_0\tilde{d}_0|=|\tilde{a}\tilde{d}|$, and $|\tilde{b}_0\tilde{c}_0|\leq|\tilde{b}\tilde{c}|$, $|\tilde{b}_0\tilde{d}_0|\leq|\tilde{b}\tilde{d}|$, $|\tilde{c}_0\tilde{d}_0|\leq|\tilde{c}\tilde{d}|$.
+    Therefore the quadruple $(\tilde{a};\tilde{b},\tilde{c},\tilde{d})$ violates (D') in $C_A(X)$, which is impossible.
+\end{proof}
+
+\begin{rem}
+    We drop the condition ``$C_A(X)$ is not a straight line'' in~\cite{buragoADAlexandrovSpaces1992}, since we adopt the assumption that $X$ is intrinsic.
+    Similar conditions in following two constructions are also dropped.
+\end{rem}
+
+The construction of cone can be modified by using spherical or hyperbolic cosine formula instead of Euclidean cosine formula.
+
+\begin{defn}
+    Let $X$ be a metric space with $\diam{X}\leq\pi$.
+    Define the \emph{spherical suspension}, denoted by $S(X)$, to be the quotient space $X\times[0,\pi]/\sim$, where $(x_1,a_1)\sim(x_2,a_2)$ if and only if $a_1=a_2=0$ or $a_1=a_2=\pi$.
+    The metric is given by
+    \[|(x_1,a_1)(x_2,a_2)|=\sqrt{\cos{a_1}\cos{a_2}+\sin{a_1}\sin{a_2}\cos{|x_1x_2|}}.\]
+\end{defn}
+
+Similar conclusion of Lemma~\ref{lem:cone intrinsic}~holds (now isometric to pieces on sphere).
+
+\begin{prop}\label{prop:suspension}
+    Let $X$ be a complete intrinsic metric space, then the following two conditions are equivalent:
+    \begin{enumerate}[\rm (a)]
+        \item $X$ is a space with curvature $\geq 1$;
+        \item $S(X)$ is a space with curvature $\geq 1$.
+    \end{enumerate}
+\end{prop}
+
+\begin{defn}
+    Let $X$ be a metric space with $\diam{X}\leq\pi$.
+    Define the \emph{elliptic cone} over $X$, denoted by $EC(X)$, to be the quotient space $X\times[0,+\infty)/\sim$, where $(x_1,a_1)\sim(x_2,a_2)$ if and only if $a_1=a_2=0$.
+    The metric is given by
+    \[|(x_1,a_1)(x_2,a_2)|=\sqrt{\cosh{a_1}\cosh{a_2}-\sinh{a_1}\sinh{a_2}\cos{|x_1x_2|}}.\]
+\end{defn}
+
+Similar conclusion of Lemma~\ref{lem:cone intrinsic}~holds (now isometric to pieces on hyperbolic plane).
+
+\begin{prop}\label{prop:elliptic cone}
+    Let $X$ be a complete intrinsic metric space, then the following two conditions are equivalent:
+    \begin{enumerate}[\rm (a)]
+        \item $X$ is a space with curvature $\geq 1$;
+        \item $EC(X)$ is a space with curvature $\geq -1$.
+    \end{enumerate}
+\end{prop}
+
+Proofs to Proposition~\ref{prop:suspension}~and~\ref{prop:elliptic cone}~are just the repetition of the proof to Proposition~\ref{prop:cone}, only need to change our prototypes to $S(S^2)=S^3$ and $EC(S^2)=H^3$ respectively.
+
+\begin{rem}
+    The parabolic cone and hyperbolic cone in~\cite{buragoADAlexandrovSpaces1992}~are vague, so we omit them.
+\end{rem}
+
+\subsection{Join}
+
+\begin{defn}
+    Let $X,Y$ be complete intrinsic metric spaces with diameters $\leq\pi$.
+    Define their \emph{join}, denoted by $X\ast Y$, to be the quotient space $X\times Y\times[0,\pi/2]/\sim$, where $(x_1,y_1,a_1)\sim(x_2,y_2,a_2)$ if and only if $x_1=x_2$ and $a_1=a_2=0$ or $y_1=y_2$ and $a_1=a_2=\pi/2$.
+    The metric of join is given by
+    \[\cos{|(x_1,y_1,a_1)(x_2,y_2,a_2)|}=\cos{a_1}\cos{a_2}\cos{|x_1x_2|}+\sin{a_1}\sin{a_2}\cos{|y_1y_2|}.\]
+\end{defn}
+
+\begin{prop}
+    Let $X,Y$ be complete intrinsic metric spaces with diameters $\leq\pi$, then $C_AX\times C_AY$ is isometric to $C_A(X\ast Y)$.
+\end{prop}
+\begin{proof}
+    Notice that an isometry can be induced by
+    \begin{align*}
+        C_A(X\ast Y)&\to C_AX\times C_AY\\
+        (x,y,a,b)&\mapsto(x,b\cos{a},y,b\sin{a}).\qedhere
+    \end{align*}
+\end{proof}
+
+\begin{cor}
+    If $X,Y$ are complete intrinsic metric spaces with curvature $\geq 1$, then $X\ast Y$ is also a space with curvature $\geq 1$.
+\end{cor}
+
+\subsection{Submetry}
+
+The definition of submetry in~\cite{buragoADAlexandrovSpaces1992}~is not in modern form, but we do not intend to change it.
+
+\begin{lem}
+    Let $X$ be a metric space, $\Pi:X\to M$ be a surjection.
+    If the fibers of $\Pi$ are closed equidistance subsets of $X$ (we say $X_{\mu_1}$ and $X_{\mu_2}$ are equidistance if $|x_1X_{\mu_2}|$ and $|x_2X_{\mu_1}|$ are independent from $x_i\in X_{\mu_i}$), then there is a natural metric on $M$ given by
+    \[|x_1x_2|=\inf\left\{|\tilde{x}_1\tilde{x}_2|\colon\tilde{x}_1\in\Pi^{-1}(x_1),\tilde{x}_2\in\Pi^{-1}(x_2)\right\}.\]
+\end{lem}
+
+\begin{defn}
+    Under above settings, $\Pi:X\to M$ is called a \emph{submetry}.
+\end{defn}
+
+\begin{prop}\label{prop:submetry}
+    Let $X$ be a complete intrinsic metric space with curvature $\geq k$, $\Pi:X\to M$ be a submetry, then $M$ is a complete intrinsic metric space with curvature $\geq k$.
+\end{prop}
+
+\begin{lem}
+    $M$ is complete.
+\end{lem}
+\begin{proof}
+    Let $\{m_i\}\subset M$ be a Cauchy sequence.
+    For each $i>0$, let $K_i\in\mathbb{N}$ such that for any $k,j>K_i$ we have
+    \[|m_km_j|<\frac{1}{2^i}.\]
+    Choose $k_i>K_i$ increasing, and $x_i\in\Pi^{-1}(m_{k_i})$ such that
+    \[|x_ix_{i+1}|<|m_{k_i}m_{k_{i+1}}|+\frac{1}{2^i}.\]
+    Then we have
+    \begin{align*}
+        |x_ix_j|&\leq|x_ix_{i+1}|+\cdots+|x_{j-1}x_j|\\
+        &\leq|m_{k_i}m_{k_{i+1}}|+\cdots+|m_{k_{j-1}}m_{k_j}|+\frac{1}{2^{i-1}}\\
+        &\leq\frac{1}{2^{i-2}}\to 0,
+    \end{align*}
+    thus $\{x_i\}$ is a Cauchy sequence.
+    Let $x_i\to x$, then $m_{k_i}\to\Pi(x)=:m$.
+    Since a Cauchy sequence converges if and only if one of its subsequences converges, $\{m_i\}$ converges.
+    Hence $M$ is complete.
+\end{proof}
+
+\begin{lem}
+    $M$ is intrinsic.
+\end{lem}
+\begin{proof}
+    Let $m_1,m_2\in M$.
+    Choose $x_1\in\Pi^{-1}(m_1)$, and $x_2\in\Pi^{-1}(m_2)$ such that
+    \[|x_1x_2|<|m_1m_2|+\frac{\varepsilon}{10}.\]
+    By Proposition~\ref{prop:delta midpoint}, we can choose $x_3\in X$ with
+    \[|x_1x_3|<\frac{1}{2}|x_1x_2|+\frac{\varepsilon}{10},\ |x_2x_3|<\frac{1}{2}|x_1x_2|+\frac{\varepsilon}{10}.\]
+    Let $m_3=\Pi(x_3)$, then we have
+    \begin{align*}
+        |m_1m_3|&\leq|x_1x_3|\\
+        &<\frac{1}{2}|x_1x_2|+\frac{\varepsilon}{10}\\
+        &<\frac{1}{2}|m_1m_2|+\frac{3\varepsilon}{20}.
+    \end{align*}
+    Similarly we have
+    \[|m_2m_3|<\frac{1}{2}|m_1m_2|+\frac{3\varepsilon}{20}.\]
+    Thus by Proposition~\ref{prop:delta midpoint}, $M$ is intrinsic.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:submetry}]
+    Let $(a;b,c,d)$ in $M$.
+    We assume $(a;b,c,d)$ are contained in a sufficiently small neighborhood so that the comparison angles are defined, and we apply the globalization theorem if necessary.
+    Choose $\tilde{a},\cdots,\tilde{d}\in X$ such that $\Pi(\tilde{a})=a,\cdots,\Pi(\tilde{d})=d$, and
+    \[|\tilde{a}\tilde{b}|<|ab|+\delta,\ |\tilde{a}\tilde{c}|<|ac|+\delta,\ |\tilde{a}\tilde{d}|<|ad|+\delta.\]
+    Moreover, given $\varepsilon>0$, we can choose $\delta$ so small that
+    \[\tilde{\measuredangle}_kbac<\tilde{\measuredangle}_k\tilde{b}\tilde{a}\tilde{c}+\frac{\varepsilon}{3}\]
+    and so on.
+    Since $X$ has curvature $\geq k$, we have
+    \[\tilde{\measuredangle}_k\tilde{b}\tilde{a}\tilde{c}+\tilde{\measuredangle}_k\tilde{a}\tilde{c}\tilde{b}+\tilde{\measuredangle}_k\tilde{a}\tilde{b}\tilde{c}\leq 2\pi.\]
+    Hence we have
+    \[\tilde{\measuredangle}_kbac+\tilde{\measuredangle}_kacb+\tilde{\measuredangle}abc<2\pi+\varepsilon.\]
+    Since $\varepsilon$ is arbitrary, this means
+    \[\tilde{\measuredangle}_kbac+\tilde{\measuredangle}_kacb+\tilde{\measuredangle}abc\leq 2\pi.\]
+    Hence $M$ has curvature $\geq k$.
+\end{proof}
+
+The proof is modified from~\cite[Theorem 8.5]{alexanderAlexandrovGeometry2024}.
+
+\begin{cor}
+    Let $X$ be a space of curvature $\geq k$, and let the group $G$ act isometrically on $X$ with closed orbits.
+    Then $X/G$ is a space with curvature $\geq k$.
+\end{cor}
